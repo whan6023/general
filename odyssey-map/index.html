@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>《奥德赛》旅程地图 &amp; 人物图谱 · The Odyssey Journey Map &amp; Characters</title>
-<meta name="description" content="诺兰2026电影路线 vs 荷马史诗 vs 历史考古；奥德赛航线16站 + 希腊神话28处圣地，卫星地图、中英双语。The Odyssey (2026): film vs Homer vs history — 16 voyage stops + 28 Greek myth sites on satellite map, bilingual.">
+<meta name="description" content="诺兰2026电影路线 vs 荷马史诗 vs 历史考古；奥德赛航线16站 + 希腊神话28处圣地 + 众神家谱 + 影视片单，卫星地图、中英双语。The Odyssey (2026): film vs Homer vs history — 16 voyage stops + 28 myth sites + god family tree + film picks on satellite map, bilingual.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="奥德赛旅程地图 · The Odyssey Map">
 <meta property="og:title" content="《奥德赛》旅程地图 &amp; 人物图谱 — The Odyssey Journey Map &amp; Characters">
-<meta property="og:description" content="诺兰2026电影路线 vs 荷马史诗 vs 历史考古；奥德赛航线16站 + 希腊神话28处圣地，卫星地图、中英双语。The Odyssey (2026): film vs Homer vs history — 16 voyage stops + 28 Greek myth sites on satellite map, bilingual.">
+<meta property="og:description" content="诺兰2026电影路线 vs 荷马史诗 vs 历史考古；奥德赛航线16站 + 希腊神话28处圣地 + 众神家谱 + 影视片单，卫星地图、中英双语。The Odyssey (2026): film vs Homer vs history — 16 voyage stops + 28 myth sites + god family tree + film picks on satellite map, bilingual.">
 <meta property="og:url" content="https://whan6023.github.io/odyssey-map/">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/whan6023/odyssey-map@main/odyssey-og.png">
 <meta property="og:image:type" content="image/png">
@@ -114,6 +114,52 @@
   .fchip:hover{border-color:var(--gold2)}
   .fchip.all{border-style:dashed}
   footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;line-height:1.8}
+  /* ===== Family Tree ===== */
+  .tree-scroll{overflow-x:auto;padding:4px 0 8px;margin-top:6px;-webkit-overflow-scrolling:touch}
+  .tree,.tree ul{list-style:none;margin:0;padding:0}
+  .tree{text-align:center;white-space:nowrap}
+  .tree ul{display:inline-block;text-align:center;padding-top:26px;position:relative;vertical-align:top}
+  .tree li{display:inline-table;text-align:center;list-style:none;position:relative;padding:26px 7px 0;white-space:normal;vertical-align:top;transition:all .15s}
+  .tree li::before,.tree li::after{content:'';position:absolute;top:0;right:50%;border-top:1.5px solid #3d5279;width:50%;height:26px}
+  .tree li::after{right:auto;left:50%;border-left:1.5px solid #3d5279}
+  .tree li:only-child::before,.tree li:only-child::after{display:none}
+  .tree li:only-child{padding-top:0}
+  .tree li:first-child::before,.tree li:last-child::after{border:0 none}
+  .tree li:last-child::before{border-right:1.5px solid #3d5279;border-radius:0 9px 0 0}
+  .tree li:first-child::after{border-radius:9px 0 0 0}
+  .tree ul ul::before{content:'';position:absolute;top:0;left:50%;border-left:1.5px solid #3d5279;width:0;height:26px}
+  .tnode{background:linear-gradient(160deg,#16233e,#0f1a2e);border:1px solid #2b3d63;border-top:3px solid var(--gold);border-radius:9px;padding:7px 12px;min-width:118px;max-width:185px;display:inline-block;transition:transform .12s,border-color .12s;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .tnode:hover{transform:translateY(-2px);border-color:var(--gold2)}
+  .tnode .tcn{font-weight:700;color:var(--cream);font-size:14px}
+  .tnode .ten{display:block;font-size:10px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-top:1px}
+  .tnode .trole{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.45}
+  .tnode.prim{border-top-color:#9aa7bd}.tnode.titan{border-top-color:#f0a05a}.tnode.olym{border-top-color:#e8c574}
+  .tnode.demi{border-top-color:#6fd3c7}.tnode.mort{border-top-color:#6fa8dc}.tnode.troj{border-top-color:#e2605a}
+  .tree-legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0 2px;font-size:11.5px;color:var(--muted)}
+  .tree-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px;border:1px solid rgba(255,255,255,.35)}
+  .tree-title{font-size:14px;color:var(--gold2);margin:18px 0 2px;padding-left:10px;border-left:3px solid var(--gold);font-weight:600}
+  .tree-title .td-en{font-size:10.5px;color:#7c8ba3;display:block;font-weight:400;margin-left:0;letter-spacing:.05em;text-transform:none}
+  .tree-note{font-size:11.5px;color:var(--muted);margin-top:6px}
+  /* ===== Recommendations ===== */
+  .rectag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:9px;margin-right:6px;vertical-align:1px;font-weight:600}
+  .rectag.movie{background:rgba(226,96,90,.16);color:#f0a0a0;border:1px solid rgba(226,96,90,.4)}
+  .rectag.cartoon{background:rgba(107,210,199,.14);color:#7fd4c0;border:1px solid rgba(107,210,199,.4)}
+  .rectag.series{background:rgba(143,162,189,.16);color:#a9bcd4;border:1px solid rgba(143,162,189,.35)}
+  table.rec{width:100%;border-collapse:collapse;font-size:12.5px;min-width:880px}
+  table.rec th{background:#0f1a2e;color:var(--gold);text-align:left;padding:9px 10px;border:1px solid #22314f;font-weight:600}
+  table.rec th .en{display:block;font-size:10px;color:var(--muted);font-weight:400;letter-spacing:.1em;text-transform:uppercase}
+  table.rec td{padding:9px 10px;border:1px solid #22314f;vertical-align:top;color:var(--text)}
+  table.rec tbody tr:nth-child(even) td{background:#0f1a2e}
+  table.rec tbody tr:hover td{background:#17243f}
+  table.rec td.tt{min-width:180px}
+  table.rec .tcn{font-weight:700;color:var(--cream);font-size:13.5px}
+  table.rec .ten{display:block;font-size:10px;color:var(--gold);letter-spacing:.05em;text-transform:uppercase}
+  table.rec .sc{color:var(--gold2);font-weight:600;white-space:nowrap}
+  table.rec .sc small{display:block;font-weight:400;color:var(--muted);font-size:10px}
+  table.rec .why{color:#a9bcd4;font-size:12px}
+  table.rec .why .td-en{display:block;font-size:10.5px;color:#7c8ba3;margin-top:2px}
+  table.rec .wh{color:var(--muted);font-size:12px;white-space:nowrap}
+  .rec-pick{display:inline-block;background:rgba(232,197,116,.16);color:var(--gold);border:1px solid rgba(232,197,116,.45);font-size:10px;padding:1px 7px;border-radius:9px;margin-left:6px;vertical-align:1px;font-weight:600}
 </style>
 </head>
 <body>
@@ -290,8 +336,205 @@
     </div>
   </div>
 
+  <div class="card">
+    <h2>五、众神与角色家谱 <span class="en">5 · Family Tree · Gods &amp; Characters</span></h2>
+    <p class="mapnote">希腊神话家族关系速查：从创世到奥林匹斯诸神，再到《奥德赛》涉及的三大凡人王室（伊萨卡、阿特柔斯、特洛伊）。下方谱系较宽，可左右滑动查看。<br><span class="td-en">A quick genealogy of Greek myth — from Creation to the Olympians, then the three mortal houses central to the Odyssey (Ithaca, Atreus, Troy). Scroll horizontally.</span></p>
+    <div class="tree-legend">
+      <span><i style="background:#9aa7bd"></i>创世 Primordial</span>
+      <span><i style="background:#f0a05a"></i>提坦 Titans</span>
+      <span><i style="background:#e8c574"></i>奥林匹斯众神 Olympians</span>
+      <span><i style="background:#6fd3c7"></i>神裔 / 半神 Demigods &amp; Spirits</span>
+      <span><i style="background:#6fa8dc"></i>凡人 Mortals</span>
+      <span><i style="background:#e2605a"></i>特洛伊王族 House of Troy</span>
+    </div>
+
+    <div class="tree-title">谱系一 · 创世 → 提坦 → 奥林匹斯诸神<span class="td-en">Tree 1 — Creation, the Titans &amp; the Twelve Olympians</span></div>
+    <div class="tree-scroll">
+      <ul class="tree">
+        <li>
+          <div class="tnode prim"><div class="tcn">卡俄斯 <span class="ten">Chaos</span></div><div class="trole">万物之始 · 创世虚空</div></div>
+          <ul>
+            <li>
+              <div class="tnode prim"><div class="tcn">盖亚 + 乌拉诺斯 <span class="ten">Gaia &amp; Uranus</span></div><div class="trole">大地女神 &amp; 天空神 · 众神之祖</div></div>
+              <ul>
+                <li>
+                  <div class="tnode titan"><div class="tcn">克洛诺斯 + 瑞亚 <span class="ten">Cronus &amp; Rhea</span></div><div class="trole">提坦神王与王后 · 十二主神之父母</div></div>
+                  <ul>
+                    <li><div class="tnode olym"><div class="tcn">宙斯 <span class="ten">Zeus</span></div><div class="trole">众神之王 · 雷电之主</div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">赫拉 <span class="ten">Hera</span></div><div class="trole">天后 · 婚姻与生育女神</div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">波塞冬 <span class="ten">Poseidon</span></div><div class="trole">海神 · 奥德修斯的宿敌</div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">哈迪斯 <span class="ten">Hades</span></div><div class="trole">冥王 · 冥界之主</div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">得墨忒耳 <span class="ten">Demeter</span></div><div class="trole">丰收女神</div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">赫斯提亚 <span class="ten">Hestia</span></div><div class="trole">炉灶与家庭女神</div></div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="tnode titan"><div class="tcn">普罗米修斯 <span class="ten">Prometheus</span></div><div class="trole">盗火者 · 人类的保护者</div></div>
+                </li>
+                <li>
+                  <div class="tnode titan"><div class="tcn">阿特拉斯 <span class="ten">Atlas</span></div><div class="trole">擎天神 · 肩扛苍穹</div></div>
+                </li>
+                <li>
+                  <div class="tnode titan"><div class="tcn">赫利俄斯 <span class="ten">Helios</span></div><div class="trole">太阳神 · 与海仙女珀耳塞所生</div></div>
+                  <ul>
+                    <li><div class="tnode demi"><div class="tcn">喀耳刻 <span class="ten">Circe</span></div><div class="trole">女巫 · 把人变猪（史诗/影片）</div></div></li>
+                    <li><div class="tnode demi"><div class="tcn">帕西法厄 <span class="ten">Pasiphae</span></div><div class="trole">克里特王后 · 米诺斯之妻</div></div></li>
+                    <li><div class="tnode demi"><div class="tcn">埃厄忒斯 <span class="ten">Aeetes</span></div><div class="trole">科尔基斯王 · 美狄亚之父</div></div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tree-title">谱系二 · 奥林匹斯诸神的子女<span class="td-en">Tree 2 — Children of the Olympians</span></div>
+    <div class="tree-scroll">
+      <ul class="tree">
+        <li>
+          <div class="tnode olym"><div class="tcn">宙斯 <span class="ten">Zeus</span></div><div class="trole">众神之王 · 多位子女</div></div>
+          <ul>
+            <li><div class="tnode demi"><div class="tcn">阿瑞斯 <span class="ten">Ares</span></div><div class="trole">战神 · 与赫拉所生</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">赫菲斯托斯 <span class="ten">Hephaestus</span></div><div class="trole">工匠与火神 · 与赫拉所生</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">赫柏 <span class="ten">Hebe</span></div><div class="trole">青春女神 · 与赫拉所生</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">阿波罗 <span class="ten">Apollo</span></div><div class="trole">光明与文艺之神 · 与勒托所生</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">阿尔忒弥斯 <span class="ten">Artemis</span></div><div class="trole">狩猎女神 · 与勒托所生</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">雅典娜 <span class="ten">Athena</span></div><div class="trole">智慧与战争女神 · 宙斯自头颅而生（影片中护佑奥德修斯）</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">赫尔墨斯 <span class="ten">Hermes</span></div><div class="trole">神使 · 与迈亚所生（赠奥德修斯神药破解喀耳刻）</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">狄俄尼索斯 <span class="ten">Dionysus</span></div><div class="trole">酒神 · 与塞墨勒所生</div></div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="tnode olym"><div class="tcn">波塞冬 <span class="ten">Poseidon</span></div><div class="trole">海神</div></div>
+          <ul>
+            <li><div class="tnode demi"><div class="tcn">波吕斐摩斯 <span class="ten">Polyphemus</span></div><div class="trole">独眼巨人 · 与托俄萨所生，被刺瞎（史诗/影片）</div></div></li>
+          </ul>
+        </li>
+        <li>
+          <div class="tnode olym"><div class="tcn">哈迪斯 <span class="ten">Hades</span></div><div class="trole">冥王</div></div>
+          <ul>
+            <li><div class="tnode demi"><div class="tcn">珀耳塞福涅 <span class="ten">Persephone</span></div><div class="trole">冥后 · 宙斯与得墨忒耳之女，嫁哈迪斯</div></div></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tree-title">谱系三 · 伊萨卡王室<span class="td-en">Tree 3 — House of Odysseus (Ithaca)</span></div>
+    <div class="tree-scroll">
+      <ul class="tree">
+        <li>
+          <div class="tnode mort"><div class="tcn">拉厄耳忒斯 + 安提克勒亚 <span class="ten">Laertes &amp; Anticleia</span></div><div class="trole">奥德修斯之父母 · 前伊萨卡王与王后</div></div>
+          <ul>
+            <li>
+              <div class="tnode mort"><div class="tcn">奥德修斯 + 佩涅罗珀 <span class="ten">Odysseus &amp; Penelope</span></div><div class="trole">伊萨卡王与王后 · 十年漂泊 / 织布之计苦等</div></div>
+              <ul>
+                <li><div class="tnode mort"><div class="tcn">忒勒玛科斯 <span class="ten">Telemachus</span></div><div class="trole">独子 · 出海寻父，与父并肩射杀求婚者（史诗/影片）</div></div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tree-title">谱系四 · 阿特柔斯家族（希腊联军王室）<span class="td-en">Tree 4 — House of Atreus</span></div>
+    <div class="tree-scroll">
+      <ul class="tree">
+        <li>
+          <div class="tnode mort"><div class="tcn">坦塔罗斯 <span class="ten">Tantalus</span></div><div class="trole">吕底亚王 · 受永恒饥渴之罚</div></div>
+          <ul>
+            <li>
+              <div class="tnode mort"><div class="tcn">珀罗普斯 <span class="ten">Pelops</span></div><div class="trole">伯罗奔尼撒（"珀罗普斯之岛"）得名来源</div></div>
+              <ul>
+                <li>
+                  <div class="tnode mort"><div class="tcn">阿特柔斯 <span class="ten">Atreus</span></div><div class="trole">迈锡尼王 · 与弟梯厄斯忒斯世仇</div></div>
+                  <ul>
+                    <li>
+                      <div class="tnode mort"><div class="tcn">阿伽门农 + 克吕泰涅斯特拉 <span class="ten">Agamemnon &amp; Clytemnestra</span></div><div class="trole">希腊联军统帅 &amp; 其妻（影片中露皮塔·尼永奥分饰海伦 / 克吕泰涅斯特拉）</div></div>
+                      <ul>
+                        <li><div class="tnode mort"><div class="tcn">俄瑞斯忒斯 <span class="ten">Orestes</span></div><div class="trole">弑母复仇 · 阿伽门农之子</div></div></li>
+                        <li><div class="tnode mort"><div class="tcn">厄勒克特拉 <span class="ten">Electra</span></div><div class="trole">助弟复仇 · 阿伽门农之女</div></div></li>
+                        <li><div class="tnode mort"><div class="tcn">伊菲革涅亚 <span class="ten">Iphigenia</span></div><div class="trole">献祭于奥利斯港 · 阿伽门农之女</div></div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="tnode mort"><div class="tcn">墨涅拉俄斯 + 海伦 <span class="ten">Menelaus &amp; Helen</span></div><div class="trole">斯巴达王 &amp; 引发十年战争的美人（影片中露皮塔·尼永奥饰海伦）</div></div>
+                      <ul>
+                        <li><div class="tnode mort"><div class="tcn">赫耳弥俄涅 <span class="ten">Hermione</span></div><div class="trole">独女</div></div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tree-title">谱系五 · 特洛伊王室<span class="td-en">Tree 5 — House of Priam (Troy)</span></div>
+    <div class="tree-scroll">
+      <ul class="tree">
+        <li>
+          <div class="tnode troj"><div class="tcn">普里阿摩斯 + 赫卡柏 <span class="ten">Priam &amp; Hecuba</span></div><div class="trole">特洛伊末代国王与王后 · 相传育有五十子女</div></div>
+          <ul>
+            <li>
+              <div class="tnode troj"><div class="tcn">赫克托尔 + 安德洛玛刻 <span class="ten">Hector &amp; Andromache</span></div><div class="trole">特洛伊最伟大英雄 · 与阿喀琉斯决斗身亡</div></div>
+              <ul>
+                <li><div class="tnode troj"><div class="tcn">阿斯堤阿那克斯 <span class="ten">Astyanax</span></div><div class="trole">幼子 · 城破之日遭杀害</div></div></li>
+              </ul>
+            </li>
+            <li><div class="tnode troj"><div class="tcn">帕里斯 <span class="ten">Paris</span></div><div class="trole">拐走海伦 · 直接引发特洛伊战争</div></div></li>
+            <li><div class="tnode troj"><div class="tcn">卡珊德拉 <span class="ten">Cassandra</span></div><div class="trole">女预言家 · 预言成真却无人相信</div></div></li>
+            <li><div class="tnode troj"><div class="tcn">赫勒诺斯 <span class="ten">Helenus</span></div><div class="trole">预言家 · 城破后归顺希腊联军</div></div></li>
+            <li><div class="tnode troj"><div class="tcn">得伊福玻斯 <span class="ten">Deiphobus</span></div><div class="trole">帕里斯死后娶海伦 · 城破被杀</div></div></li>
+            <li><div class="tnode troj"><div class="tcn">波吕克塞娜 <span class="ten">Polyxena</span></div><div class="trole">公主 · 献祭于阿喀琉斯墓前</div></div></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <p class="tree-note">谱系依赫西俄德《神谱》与荷马史诗及通行希腊神话谱系整理，为便于阅读已作简化（如珀耳塞福涅兼为宙斯之女与哈迪斯之妻）。<span class="td-en">Genealogy simplified from Hesiod's Theogony, the Homeric epics &amp; standard references — e.g. Persephone is both Zeus's daughter and Hades' wife.</span></p>
+  </div>
+
+  <div class="card">
+    <h2>六、相关影视推荐 <span class="en">6 · Movies &amp; Cartoons · 希腊神话主题片单</span></h2>
+    <p class="mapnote">看完诺兰版《奥德赛》不过瘾？这份片单从最忠实的荷马史诗改编到希腊神话大片与高分动画，按推荐度排序。评分：豆瓣 / 烂番茄（媒体 / 观众）。<br><span class="td-en">Craving more after Nolan's film? From the most faithful Homer adaptations to myth epics and acclaimed animation — scores: Douban / Rotten Tomatoes (critics / audience).</span></p>
+    <div class="tblwrap">
+    <table class="rec">
+      <thead>
+        <tr>
+          <th>推荐<span class="en">Title</span></th>
+          <th>类型<span class="en">Type</span></th>
+          <th>年份<span class="en">Year</span></th>
+          <th>评分<span class="en">Scores</span></th>
+          <th>为什么推荐<span class="en">Why watch</span></th>
+          <th>观看渠道<span class="en">Where</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="tt"><div class="tcn">The Odyssey 《奥德赛》<span class="rec-pick">最佳改编</span></div><div class="ten">1997 TV Miniseries</div></td><td><span class="rectag movie">电影 / 迷你剧</span></td><td class="sc">1997<small>Emmy 最佳特效</small></td><td class="sc">RT 79%<small>Critics · 忠实度最高</small></td><td class="why">最忠实荷马原著的影视改编：十年漂泊全程、众神与怪物俱在；阿曼德·阿桑特演活了"足智多谋"的奥德修斯。<span class="td-en">The most faithful film/TV take on Homer — the full ten-year voyage, gods and monsters included; Armand Assante is a masterful Odysseus.</span></td><td class="wh">搜狗 / 搜狐视频 · 海外流媒体</td></tr>
+        <tr><td class="tt"><div class="tcn">The Return 《归途》</div><div class="ten">2024 Drama</div></td><td><span class="rectag movie">电影</span></td><td class="sc">2024<small>威尼斯展映</small></td><td class="sc">RT 78%<small>Critics</small></td><td class="why">拉尔夫·费因斯 + 朱丽叶·比诺什，聚焦"归乡"后半程：苍老疲惫的奥德修斯与苦等二十年的佩涅罗珀，克制而悲怆。<span class="td-en">Ralph Fiennes &amp; Juliette Binoche focus on the homecoming — a haggard Odysseus and Penelope's twenty-year wait; restrained and moving.</span></td><td class="wh">海外流媒体</td></tr>
+        <tr><td class="tt"><div class="tcn">O Brother, Where Art Thou? 《逃狱三王》</div><div class="ten">2000 Coen Bros.</div></td><td><span class="rectag movie">电影</span></td><td class="sc">2000<small>科恩兄弟</small></td><td class="sc">RT 78%<small>Critics / 78</small></td><td class="why">科恩兄弟把《奥德赛》搬到美国大萧条南方的公路喜剧：越狱三人组、独眼巨人般的约翰·古德曼、蓝草音乐版塞壬。最出人意料的改编。<span class="td-en">The Coens relocate the Odyssey to Depression-era Mississippi: three escaped convicts, a one-eyed giant (John Goodman) and siren-bluegrass. The most unexpected riff on Homer.</span></td><td class="wh">海外流媒体</td></tr>
+        <tr><td class="tt"><div class="tcn">Troy 《特洛伊》</div><div class="ten">2004 Epic</div></td><td><span class="rectag movie">电影</span></td><td class="sc">2004<small>沃尔夫冈·彼得森</small></td><td class="sc">豆瓣 7.6<small>RT 54 / 73</small></td><td class="why">史诗大战 + 木马计的殿堂级呈现；布拉德·皮特版阿喀琉斯与赫克托尔（艾瑞克·巴纳）决斗是全片巅峰。战争场面宏大。<span class="td-en">Spectacular siege epic capped by the wooden-horse stratagem; Brad Pitt's Achilles vs Eric Bana's Hector is the film's peak.</span></td><td class="wh">爱奇艺</td></tr>
+        <tr><td class="tt"><div class="tcn">300 《斯巴达300勇士》</div><div class="ten">2006 Stylized Epic</div></td><td><span class="rectag movie">电影</span></td><td class="sc">2006<small>扎克·施奈德</small></td><td class="sc">豆瓣 7.9<small>RT 61 / 89</small></td><td class="why">温泉关以少敌多的极致风格化呈现，漫画式视觉+慢镜血战，观众评分高达89%。<span class="td-en">Hyper-stylized retelling of Thermopylae; comic-book visuals and slow-mo carnage — a big audience favorite (89%).</span></td><td class="wh">腾讯 / 爱奇艺 / 优酷 / B站</td></tr>
+        <tr><td class="tt"><div class="tcn">Jason and the Argonauts 《杰逊王子战群妖》</div><div class="ten">1963 Stop-motion</div></td><td><span class="rectag movie">电影</span></td><td class="sc">1963<small>雷·哈里豪森</small></td><td class="sc">IMDb 7.3<small>特效开山之作</small></td><td class="why">影史特效里程碑：雷·哈里豪森的定格动画让七具骷髅武士复活，启发了《星球大战》到《加勒比海盗》的无数导演。<span class="td-en">A stop-motion landmark — Ray Harryhausen's army of skeleton warriors inspired generations of filmmakers from Star Wars to Pirates.</span></td><td class="wh">搜狐视频</td></tr>
+        <tr><td class="tt"><div class="tcn">Clash of the Titans 《诸神之战》</div><div class="ten">2010 Remake</div></td><td><span class="rectag movie">电影</span></td><td class="sc">2010<small>萨姆·沃辛顿</small></td><td class="sc">豆瓣 6.2<small>爆米花娱乐</small></td><td class="why">珀尔修斯斩美杜莎、斗北海巨妖克拉肯；连姆·尼森的宙斯 + 拉尔夫·费因斯的哈迪斯。纯视觉爽片，别带历史预期。<span class="td-en">Perseus vs Medusa and the Kraken; Liam Neeson's Zeus and Ralph Fiennes' Hades. Pure spectacle — leave the history books at home.</span></td><td class="wh">腾讯 / 爱奇艺 / B站</td></tr>
+        <tr><td class="tt"><div class="tcn">Hercules 《大力士》</div><div class="ten">1997 Disney</div></td><td><span class="rectag cartoon">动画</span></td><td class="sc">1997<small>迪士尼</small></td><td class="sc">豆瓣 7.9<small>音乐剧巅峰</small></td><td class="why">迪士尼希腊神话音乐剧巅峰：大反派哈迪斯（詹姆斯·伍兹）是全片笑点，"Go the Distance"金曲传唱。最友好的入门选择。<span class="td-en">Disney's mythic musical high — James Woods' Hades steals every scene and "Go the Distance" is an all-time anthem. The friendliest gateway into Greek myth.</span></td><td class="wh">Disney+ / 国内视频</td></tr>
+        <tr><td class="tt"><div class="tcn">Blood of Zeus 《宙斯之血》</div><div class="ten">2020 Netflix Anime</div></td><td><span class="rectag cartoon">动画</span></td><td class="sc">2020<small>Netflix 原创</small></td><td class="sc">豆瓣 7.3<small>成人向</small></td><td class="why">Netflix 成人向神战动画：宙斯私生子赫隆的弑父复仇记，神魔大战动作编排爽快，第三季刚完结。<span class="td-en">Netflix's adult animated epic: Heron, Zeus's demigod son, vs the giants. Superbly choreographed god-fights; three seasons so far.</span></td><td class="wh">Netflix</td></tr>
+        <tr><td class="tt"><div class="tcn">Kaos 《脱线神话》</div><div class="ten">2024 Dark Comedy</div></td><td><span class="rectag series">剧集</span></td><td class="sc">2024<small>Netflix 原创</small></td><td class="sc">RT 77 / 83<small>Critics / Audience</small></td><td class="why">杰夫·戈德布鲁姆的神经质宙斯+黑色喜剧：把奥林匹斯写成病态权贵家族。口碑极佳可惜仅一季。<span class="td-en">Jeff Goldblum's paranoid Zeus anchors this dark comedy that reimagines Olympus as a dysfunctional power family. Loved by critics — sadly cancelled after one season.</span></td><td class="wh">Netflix</td></tr>
+        <tr><td class="tt"><div class="tcn">Percy Jackson &amp; the Olympians 《波西·杰克逊》</div><div class="ten">2023 Disney+</div></td><td><span class="rectag series">剧集</span></td><td class="sc">2023<small>Disney+</small></td><td class="sc">豆瓣 5.7<small>青少年向</small></td><td class="why">原著作者亲自参与、更忠于小说的影视版：现代纽约的半神少年冒险，把整座奥林匹斯搬进当代美国。适合带孩子入门。<span class="td-en">A faithful, author-supervised take on the novels: modern demigod adventures set in present-day America. Great family entry point.</span></td><td class="wh">Disney+</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="summary">
+      <p><b>怎么选：</b>忠于原著 → 1997版《奥德赛》；史诗大片 → 《特洛伊》《斯巴达300勇士》；轻松有趣 → 迪士尼《大力士》；成人向暗黑 → 《宙斯之血》《脱线神话》；带孩子入门 → 《波西·杰克逊》。<span class="td-en">Pick guide: faithful → The Odyssey (1997); epic spectacle → Troy / 300; fun &amp; musical → Hercules; dark &amp; adult → Blood of Zeus / Kaos; family entry → Percy Jackson.</span></p>
+    </div>
+  </div>
+
   <footer>
     地点基于荷马史诗与学界“传统识别”位置，个别地点（食莲者之地、莱斯特律戈涅斯、斯库拉等）学术界仍有争议；非精确历史考证。 ｜ Positions follow traditional identifications; some remain disputed.<br>
+    家谱据《神谱》与通行希腊神话谱系简化整理 ｜ Family tree simplified from the Theogony &amp; standard genealogies.<br>
     地图 © OpenStreetMap contributors · © CARTO ｜ 演职员信息来自 IMDb / 豆瓣 / 百度百科（2026-08）
   </footer>
 </div>
