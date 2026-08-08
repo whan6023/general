@@ -163,6 +163,20 @@
   table.rec .why .td-en{display:block;font-size:10.5px;color:#7c8ba3;margin-top:2px}
   table.rec .wh{color:var(--muted);font-size:12px;white-space:nowrap}
   .rec-pick{display:inline-block;background:rgba(232,197,116,.16);color:var(--gold);border:1px solid rgba(232,197,116,.45);font-size:10px;padding:1px 7px;border-radius:9px;margin-left:6px;vertical-align:1px;font-weight:600}
+  /* ===== Tabs ===== */
+  .tabbar{position:sticky;top:0;z-index:60;display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:8px;background:rgba(10,17,32,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid #22314f;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  .tab{cursor:pointer;user-select:none;padding:7px 15px;border-radius:9px;border:1px solid #2b3d63;background:#0f1a2e;color:var(--muted);font-size:13px;font-weight:600;transition:all .15s;text-align:center}
+  .tab small{display:block;font-size:9px;font-weight:400;color:#7c8ba3;letter-spacing:.12em;text-transform:uppercase;margin-top:1px}
+  .tab:hover{border-color:var(--gold2);color:var(--cream)}
+  .tab.on{background:#182445;border-color:var(--gold2);color:var(--cream);box-shadow:inset 0 0 0 1px rgba(232,197,116,.3)}
+  .tabpanel{display:none}
+  .tabpanel.on{display:block;animation:tfade .25s ease}
+  @keyframes tfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  /* ===== Movie tags inside family-tree nodes ===== */
+  .tnode .tfilm{font-size:9.5px;color:#7fd4c0;margin-top:4px;line-height:1.5;border-top:1px dashed #2a3a5c;padding-top:4px;text-align:left}
+  .tnode .tfilm b{display:block;font-size:8px;color:#6f88a8;letter-spacing:.15em;text-transform:uppercase;font-weight:600;margin-bottom:1px}
+  .tnode .tfilm span{color:#7fd4c0}
+  .tnode .tfilm em{font-style:normal;color:#e8c574}
 </style>
 </head>
 <body>
@@ -185,6 +199,14 @@
     </div>
   </header>
 
+  <div class="tabbar">
+    <button class="tab on" data-t="journey">旅程与神话<small>Journey &amp; Myths</small></button>
+    <button class="tab" data-t="people">人物与对照<small>People &amp; Places</small></button>
+    <button class="tab" data-t="tree">家谱<small>Family Tree</small></button>
+    <button class="tab" data-t="movies">影视推荐<small>Movies &amp; Cartoons</small></button>
+  </div>
+
+  <div class="tabpanel on" id="p-journey">
   <div class="card">
     <h2>一、奥德赛旅程地图 <span class="en">1 · Journey Map · 真实地理坐标 Real-world coordinates</span></h2>
     <p class="mapnote">红色虚线 = 奥德修斯的归乡之路（特洛伊 → 伊萨卡）｜ 青色虚线 = 忒勒玛科斯寻父之旅（伊萨卡 → 皮洛斯 → 斯巴达）。 点击金/青色编号标记查看详情；点击下方站点条目可自动飞行定位。 底图为真实卫星影像，可点右上角图层按钮切换暗色风格。<br><span class="td-en">Red = Odysseus' route (Troy→Ithaca) ｜ Teal = Telemachus' voyage (Ithaca→Pylos→Sparta). Click markers for details; click list rows to fly. Satellite basemap with a dark toggle.</span></p>
@@ -249,7 +271,9 @@
       <div class="grid" data-cycle="theb"></div>
     </div>
   </div>
+  </div><!-- /p-journey -->
 
+  <div class="tabpanel" id="p-people">
   <div class="card">
     <h2>三、地点三重对照 <span class="en">3 · Locations — Movie vs Homer vs History</span></h2>
     <p class="mapnote">同一地点在三种"地理"里的身份：电影改编、荷马原文、真实历史/考古。 结论先行：影片是神话巡礼、荷马刻意模糊、只有少数遗址经得起考古检验。<br><span class="td-en">Each site's identity in three geographies: the film, Homer's text, real history/archaeology. Verdict: the film is a mythic tour, Homer is deliberately vague, and only a few sites stand up archaeologically.</span></p>
@@ -338,10 +362,12 @@
 
     </div>
   </div>
+  </div><!-- /p-people -->
 
+  <div class="tabpanel" id="p-tree">
   <div class="card">
     <h2>五、众神与角色家谱 <span class="en">5 · Family Tree · Gods &amp; Characters</span></h2>
-    <p class="mapnote">希腊神话家族关系速查：从创世到奥林匹斯诸神，再到《奥德赛》涉及的三大凡人王室（伊萨卡、阿特柔斯、特洛伊）。罗马神名以斜体标注。下方谱系较宽，可左右滑动查看。<br><span class="td-en">A quick genealogy of Greek myth — from Creation to the Olympians, then the three mortal houses central to the Odyssey (Ithaca, Atreus, Troy). Roman equivalents in italics. Scroll horizontally.</span></p>
+    <p class="mapnote">希腊神话家族关系速查：从创世到奥林匹斯诸神，再到《奥德赛》涉及的三大凡人王室（伊萨卡、阿特柔斯、特洛伊）。罗马神名以斜体标注；节点下方「相关影片」对应第六部分的片单。下方谱系较宽，可左右滑动查看。<br><span class="td-en">A quick genealogy of Greek myth — from Creation to the Olympians, then the three mortal houses central to the Odyssey (Ithaca, Atreus, Troy). Roman equivalents in italics; the "Films" line under each node links to the picks in section 6. Scroll horizontally.</span></p>
     <div class="tree-legend">
       <span><i style="background:#9aa7bd"></i>创世 Primordial</span>
       <span><i style="background:#f0a05a"></i>提坦 Titans</span>
@@ -363,16 +389,16 @@
                 <li>
                   <div class="tnode titan"><div class="tcn">克洛诺斯 + 瑞亚 <span class="ten">Cronus &amp; Rhea <em class="rom">Saturn &amp; Ops</em></span></div><div class="trole">提坦神王与王后 · 十二主神之父母</div></div>
                   <ul>
-                    <li><div class="tnode olym"><div class="tcn">宙斯 <span class="ten">Zeus <em class="rom">Jupiter</em></span></div><div class="trole">众神之王 · 雷电之主</div></div></li>
-                    <li><div class="tnode olym"><div class="tcn">赫拉 <span class="ten">Hera <em class="rom">Juno</em></span></div><div class="trole">天后 · 婚姻与生育女神</div></div></li>
-                    <li><div class="tnode olym"><div class="tcn">波塞冬 <span class="ten">Poseidon <em class="rom">Neptune</em></span></div><div class="trole">海神 · 奥德修斯的宿敌</div></div></li>
-                    <li><div class="tnode olym"><div class="tcn">哈迪斯 <span class="ten">Hades <em class="rom">Pluto</em></span></div><div class="trole">冥王 · 冥界之主</div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">宙斯 <span class="ten">Zeus <em class="rom">Jupiter</em></span></div><div class="trole">众神之王 · 雷电之主</div><div class="tfilm"><b>相关影片 Films</b><span>《脱线神话》Kaos ·《宙斯之血》Blood of Zeus ·《诸神之战》Clash of the Titans</span></div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">赫拉 <span class="ten">Hera <em class="rom">Juno</em></span></div><div class="trole">天后 · 婚姻与生育女神</div><div class="tfilm"><b>相关影片 Films</b><span>《脱线神话》Kaos</span></div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">波塞冬 <span class="ten">Poseidon <em class="rom">Neptune</em></span></div><div class="trole">海神 · 奥德修斯的宿敌</div><div class="tfilm"><b>相关影片 Films</b><span>《波西·杰克逊》Percy Jackson ·《奥德赛》The Odyssey</span></div></div></li>
+                    <li><div class="tnode olym"><div class="tcn">哈迪斯 <span class="ten">Hades <em class="rom">Pluto</em></span></div><div class="trole">冥王 · 冥界之主</div><div class="tfilm"><b>相关影片 Films</b><span>《大力士》Hercules ·《脱线神话》Kaos ·《诸神之战》Clash of the Titans</span></div></div></li>
                     <li><div class="tnode olym"><div class="tcn">得墨忒耳 <span class="ten">Demeter <em class="rom">Ceres</em></span></div><div class="trole">丰收女神</div></div></li>
                     <li><div class="tnode olym"><div class="tcn">赫斯提亚 <span class="ten">Hestia <em class="rom">Vesta</em></span></div><div class="trole">炉灶与家庭女神</div></div></li>
                   </ul>
                 </li>
                 <li>
-                  <div class="tnode titan"><div class="tcn">普罗米修斯 <span class="ten">Prometheus</span></div><div class="trole">盗火者 · 人类的保护者</div></div>
+                  <div class="tnode titan"><div class="tcn">普罗米修斯 <span class="ten">Prometheus</span></div><div class="trole">盗火者 · 人类的保护者</div><div class="tfilm"><b>相关影片 Films</b><span>《脱线神话》Kaos</span></div></div>
                 </li>
                 <li>
                   <div class="tnode titan"><div class="tcn">阿特拉斯 <span class="ten">Atlas</span></div><div class="trole">擎天神 · 肩扛苍穹</div></div>
@@ -380,9 +406,13 @@
                 <li>
                   <div class="tnode titan"><div class="tcn">赫利俄斯 <span class="ten">Helios <em class="rom">Sol</em></span></div><div class="trole">太阳神 · 与海仙女珀耳塞所生</div></div>
                   <ul>
-                    <li><div class="tnode demi"><div class="tcn">喀耳刻 <span class="ten">Circe</span></div><div class="trole">女巫 · 把人变猪（史诗/影片）</div></div></li>
+                    <li><div class="tnode demi"><div class="tcn">喀耳刻 <span class="ten">Circe</span></div><div class="trole">女巫 · 把人变猪（史诗/影片）</div><div class="tfilm"><b>相关影片 Films</b><span>《奥德赛》The Odyssey (1997 / 2026)</span></div></div></li>
                     <li><div class="tnode demi"><div class="tcn">帕西法厄 <span class="ten">Pasiphae</span></div><div class="trole">克里特王后 · 米诺斯之妻</div></div></li>
-                    <li><div class="tnode demi"><div class="tcn">埃厄忒斯 <span class="ten">Aeetes</span></div><div class="trole">科尔基斯王 · 美狄亚之父</div></div></li>
+                    <li><div class="tnode demi"><div class="tcn">埃厄忒斯 <span class="ten">Aeetes</span></div><div class="trole">科尔基斯王 · 美狄亚之父</div></div>
+                      <ul>
+                        <li><div class="tnode demi"><div class="tcn">美狄亚 <span class="ten">Medea</span></div><div class="trole">女巫 · 助伊阿宋盗取金羊毛</div><div class="tfilm"><b>相关影片 Films</b><span>《杰逊王子战群妖》Jason &amp; the Argonauts (1963)</span></div></div></li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -398,26 +428,28 @@
         <li>
           <div class="tnode olym"><div class="tcn">宙斯 <span class="ten">Zeus <em class="rom">Jupiter</em></span></div><div class="trole">众神之王 · 多位子女</div></div>
           <ul>
-            <li><div class="tnode demi"><div class="tcn">阿瑞斯 <span class="ten">Ares <em class="rom">Mars</em></span></div><div class="trole">战神 · 与赫拉所生</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">阿瑞斯 <span class="ten">Ares <em class="rom">Mars</em></span></div><div class="trole">战神 · 与赫拉所生</div><div class="tfilm"><b>相关影片 Films</b><span>《诸神之战》Clash of the Titans</span></div></div></li>
             <li><div class="tnode demi"><div class="tcn">赫菲斯托斯 <span class="ten">Hephaestus <em class="rom">Vulcan</em></span></div><div class="trole">工匠与火神 · 与赫拉所生</div></div></li>
             <li><div class="tnode demi"><div class="tcn">赫柏 <span class="ten">Hebe <em class="rom">Juventas</em></span></div><div class="trole">青春女神 · 与赫拉所生</div></div></li>
             <li><div class="tnode demi"><div class="tcn">阿波罗 <span class="ten">Apollo</span></div><div class="trole">光明与文艺之神 · 与勒托所生</div></div></li>
             <li><div class="tnode demi"><div class="tcn">阿尔忒弥斯 <span class="ten">Artemis <em class="rom">Diana</em></span></div><div class="trole">狩猎女神 · 与勒托所生</div></div></li>
-            <li><div class="tnode demi"><div class="tcn">雅典娜 <span class="ten">Athena <em class="rom">Minerva</em></span></div><div class="trole">智慧与战争女神 · 宙斯自头颅而生（影片中护佑奥德修斯）</div></div></li>
-            <li><div class="tnode demi"><div class="tcn">赫尔墨斯 <span class="ten">Hermes <em class="rom">Mercury</em></span></div><div class="trole">神使 · 与迈亚所生（赠奥德修斯神药破解喀耳刻）</div></div></li>
-            <li><div class="tnode demi"><div class="tcn">狄俄尼索斯 <span class="ten">Dionysus <em class="rom">Bacchus</em></span></div><div class="trole">酒神 · 与塞墨勒所生</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">雅典娜 <span class="ten">Athena <em class="rom">Minerva</em></span></div><div class="trole">智慧与战争女神 · 宙斯自头颅而生（影片中护佑奥德修斯）</div><div class="tfilm"><b>相关影片 Films</b><span>《奥德赛》(2026) ·《归途》The Return ·《波西·杰克逊》Percy Jackson</span></div></div></li>
+            <li><div class="tnode demi"><div class="tcn">赫尔墨斯 <span class="ten">Hermes <em class="rom">Mercury</em></span></div><div class="trole">神使 · 与迈亚所生（赠奥德修斯神药破解喀耳刻）</div><div class="tfilm"><b>相关影片 Films</b><span>《波西·杰克逊》Percy Jackson</span></div></div></li>
+            <li><div class="tnode demi"><div class="tcn">狄俄尼索斯 <span class="ten">Dionysus <em class="rom">Bacchus</em></span></div><div class="trole">酒神 · 与塞墨勒所生</div><div class="tfilm"><b>相关影片 Films</b><span>《波西·杰克逊》Percy Jackson ·《脱线神话》Kaos</span></div></div></li>
+            <li><div class="tnode demi"><div class="tcn">赫拉克勒斯 <span class="ten">Heracles</span></div><div class="trole">大力神 · 与阿尔克墨涅所生，十二功业</div><div class="tfilm"><b>相关影片 Films</b><span>《大力士》Hercules (1997)</span></div></div></li>
+            <li><div class="tnode demi"><div class="tcn">珀尔修斯 <span class="ten">Perseus</span></div><div class="trole">斩美杜莎 · 与达那厄所生</div><div class="tfilm"><b>相关影片 Films</b><span>《诸神之战》Clash of the Titans (2010)</span></div></div></li>
           </ul>
         </li>
         <li>
           <div class="tnode olym"><div class="tcn">波塞冬 <span class="ten">Poseidon <em class="rom">Neptune</em></span></div><div class="trole">海神</div></div>
           <ul>
-            <li><div class="tnode demi"><div class="tcn">波吕斐摩斯 <span class="ten">Polyphemus</span></div><div class="trole">独眼巨人 · 与托俄萨所生，被刺瞎（史诗/影片）</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">波吕斐摩斯 <span class="ten">Polyphemus</span></div><div class="trole">独眼巨人 · 与托俄萨所生，被刺瞎（史诗/影片）</div><div class="tfilm"><b>相关影片 Films</b><span>《奥德赛》The Odyssey (1997 / 2026)</span></div></div></li>
           </ul>
         </li>
         <li>
           <div class="tnode olym"><div class="tcn">哈迪斯 <span class="ten">Hades <em class="rom">Pluto</em></span></div><div class="trole">冥王</div></div>
           <ul>
-            <li><div class="tnode demi"><div class="tcn">珀耳塞福涅 <span class="ten">Persephone <em class="rom">Proserpina</em></span></div><div class="trole">冥后 · 宙斯与得墨忒耳之女，嫁哈迪斯</div></div></li>
+            <li><div class="tnode demi"><div class="tcn">珀耳塞福涅 <span class="ten">Persephone <em class="rom">Proserpina</em></span></div><div class="trole">冥后 · 宙斯与得墨忒耳之女，嫁哈迪斯</div><div class="tfilm"><b>相关影片 Films</b><span>《脱线神话》Kaos ·《波西·杰克逊》Percy Jackson</span></div></div></li>
           </ul>
         </li>
       </ul>
@@ -430,9 +462,9 @@
           <div class="tnode mort"><div class="tcn">拉厄耳忒斯 + 安提克勒亚 <span class="ten">Laertes &amp; Anticleia</span></div><div class="trole">奥德修斯之父母 · 前伊萨卡王与王后</div></div>
           <ul>
             <li>
-              <div class="tnode mort"><div class="tcn">奥德修斯 + 佩涅罗珀 <span class="ten">Odysseus <em class="rom">Ulysses</em> &amp; Penelope</span></div><div class="trole">伊萨卡王与王后 · 十年漂泊 / 织布之计苦等</div></div>
+              <div class="tnode mort"><div class="tcn">奥德修斯 + 佩涅罗珀 <span class="ten">Odysseus <em class="rom">Ulysses</em> &amp; Penelope</span></div><div class="trole">伊萨卡王与王后 · 十年漂泊 / 织布之计苦等</div><div class="tfilm"><b>相关影片 Films</b><span>《奥德赛》(1997 / 2026) ·《归途》The Return ·《特洛伊》Troy</span></div></div>
               <ul>
-                <li><div class="tnode mort"><div class="tcn">忒勒玛科斯 <span class="ten">Telemachus</span></div><div class="trole">独子 · 出海寻父，与父并肩射杀求婚者（史诗/影片）</div></div></li>
+                <li><div class="tnode mort"><div class="tcn">忒勒玛科斯 <span class="ten">Telemachus</span></div><div class="trole">独子 · 出海寻父，与父并肩射杀求婚者（史诗/影片）</div><div class="tfilm"><b>相关影片 Films</b><span>《奥德赛》(2026) ·《归途》The Return</span></div></div></li>
               </ul>
             </li>
           </ul>
@@ -453,7 +485,7 @@
                   <div class="tnode mort"><div class="tcn">阿特柔斯 <span class="ten">Atreus</span></div><div class="trole">迈锡尼王 · 与弟梯厄斯忒斯世仇</div></div>
                   <ul>
                     <li>
-                      <div class="tnode mort"><div class="tcn">阿伽门农 + 克吕泰涅斯特拉 <span class="ten">Agamemnon &amp; Clytemnestra</span></div><div class="trole">希腊联军统帅 &amp; 其妻（影片中露皮塔·尼永奥分饰海伦 / 克吕泰涅斯特拉）</div></div>
+                      <div class="tnode mort"><div class="tcn">阿伽门农 + 克吕泰涅斯特拉 <span class="ten">Agamemnon &amp; Clytemnestra</span></div><div class="trole">希腊联军统帅 &amp; 其妻（影片中露皮塔·尼永奥分饰海伦 / 克吕泰涅斯特拉）</div><div class="tfilm"><b>相关影片 Films</b><span>《特洛伊》Troy ·《奥德赛》(2026)</span></div></div>
                       <ul>
                         <li><div class="tnode mort"><div class="tcn">俄瑞斯忒斯 <span class="ten">Orestes</span></div><div class="trole">弑母复仇 · 阿伽门农之子</div></div></li>
                         <li><div class="tnode mort"><div class="tcn">厄勒克特拉 <span class="ten">Electra</span></div><div class="trole">助弟复仇 · 阿伽门农之女</div></div></li>
@@ -461,7 +493,7 @@
                       </ul>
                     </li>
                     <li>
-                      <div class="tnode mort"><div class="tcn">墨涅拉俄斯 + 海伦 <span class="ten">Menelaus &amp; Helen <em class="rom">Helena</em></span></div><div class="trole">斯巴达王 &amp; 引发十年战争的美人（影片中露皮塔·尼永奥饰海伦）</div></div>
+                      <div class="tnode mort"><div class="tcn">墨涅拉俄斯 + 海伦 <span class="ten">Menelaus &amp; Helen <em class="rom">Helena</em></span></div><div class="trole">斯巴达王 &amp; 引发十年战争的美人（影片中露皮塔·尼永奥饰海伦）</div><div class="tfilm"><b>相关影片 Films</b><span>《特洛伊》Troy ·《奥德赛》(2026)</span></div></div>
                       <ul>
                         <li><div class="tnode mort"><div class="tcn">赫耳弥俄涅 <span class="ten">Hermione</span></div><div class="trole">独女</div></div></li>
                       </ul>
@@ -479,15 +511,15 @@
     <div class="tree-scroll">
       <ul class="tree">
         <li>
-          <div class="tnode troj"><div class="tcn">普里阿摩斯 + 赫卡柏 <span class="ten">Priam &amp; Hecuba</span></div><div class="trole">特洛伊末代国王与王后 · 相传育有五十子女</div></div>
+          <div class="tnode troj"><div class="tcn">普里阿摩斯 + 赫卡柏 <span class="ten">Priam &amp; Hecuba</span></div><div class="trole">特洛伊末代国王与王后 · 相传育有五十子女</div><div class="tfilm"><b>相关影片 Films</b><span>《特洛伊》Troy</span></div></div>
           <ul>
             <li>
-              <div class="tnode troj"><div class="tcn">赫克托尔 + 安德洛玛刻 <span class="ten">Hector &amp; Andromache</span></div><div class="trole">特洛伊最伟大英雄 · 与阿喀琉斯决斗身亡</div></div>
+              <div class="tnode troj"><div class="tcn">赫克托尔 + 安德洛玛刻 <span class="ten">Hector &amp; Andromache</span></div><div class="trole">特洛伊最伟大英雄 · 与阿喀琉斯决斗身亡</div><div class="tfilm"><b>相关影片 Films</b><span>《特洛伊》Troy</span></div></div>
               <ul>
                 <li><div class="tnode troj"><div class="tcn">阿斯堤阿那克斯 <span class="ten">Astyanax</span></div><div class="trole">幼子 · 城破之日遭杀害</div></div></li>
               </ul>
             </li>
-            <li><div class="tnode troj"><div class="tcn">帕里斯 <span class="ten">Paris</span></div><div class="trole">拐走海伦 · 直接引发特洛伊战争</div></div></li>
+            <li><div class="tnode troj"><div class="tcn">帕里斯 <span class="ten">Paris</span></div><div class="trole">拐走海伦 · 直接引发特洛伊战争</div><div class="tfilm"><b>相关影片 Films</b><span>《特洛伊》Troy</span></div></div></li>
             <li><div class="tnode troj"><div class="tcn">卡珊德拉 <span class="ten">Cassandra</span></div><div class="trole">女预言家 · 预言成真却无人相信</div></div></li>
             <li><div class="tnode troj"><div class="tcn">赫勒诺斯 <span class="ten">Helenus</span></div><div class="trole">预言家 · 城破后归顺希腊联军</div></div></li>
             <li><div class="tnode troj"><div class="tcn">得伊福玻斯 <span class="ten">Deiphobus</span></div><div class="trole">帕里斯死后娶海伦 · 城破被杀</div></div></li>
@@ -499,7 +531,9 @@
 
     <p class="tree-note">谱系依赫西俄德《神谱》与荷马史诗及通行希腊神话谱系整理，为便于阅读已作简化（如珀耳塞福涅兼为宙斯之女与哈迪斯之妻）。<span class="td-en">Genealogy simplified from Hesiod's Theogony, the Homeric epics &amp; standard references — e.g. Persephone is both Zeus's daughter and Hades' wife.</span></p>
   </div>
+  </div><!-- /p-tree -->
 
+  <div class="tabpanel" id="p-movies">
   <div class="card">
     <h2>六、相关影视推荐 <span class="en">6 · Movies &amp; Cartoons · 希腊神话主题片单</span></h2>
     <p class="mapnote">看完诺兰版《奥德赛》不过瘾？这份片单从最忠实的荷马史诗改编到希腊神话大片与高分动画，按推荐度排序。评分：豆瓣 / 烂番茄（媒体 / 观众）。海报来自 TMDb。<br><span class="td-en">Craving more after Nolan's film? From the most faithful Homer adaptations to myth epics and acclaimed animation — scores: Douban / Rotten Tomatoes (critics / audience). Posters via TMDb.</span></p>
@@ -535,6 +569,7 @@
       <p><b>怎么选：</b>忠于原著 → 1997版《奥德赛》；史诗大片 → 《特洛伊》《斯巴达300勇士》；轻松有趣 → 迪士尼《大力士》；成人向暗黑 → 《宙斯之血》《脱线神话》；带孩子入门 → 《波西·杰克逊》。<span class="td-en">Pick guide: faithful → The Odyssey (1997); epic spectacle → Troy / 300; fun &amp; musical → Hercules; dark &amp; adult → Blood of Zeus / Kaos; family entry → Percy Jackson.</span></p>
     </div>
   </div>
+  </div><!-- /p-movies -->
 
   <footer>
     地点基于荷马史诗与学界“传统识别”位置，个别地点（食莲者之地、莱斯特律戈涅斯、斯库拉等）学术界仍有争议；非精确历史考证。 ｜ Positions follow traditional identifications; some remain disputed.<br>
@@ -815,6 +850,21 @@ applyFilter2();
 /* fit bounds */
 map1.fitBounds(L.latLngBounds(routeOd.concat(routeTl)), {padding:[40,40]});
 map2.fitBounds(L.latLngBounds(mythSites.map(s=>[s.lat,s.lng])), {padding:[40,40]});
+
+/* ===== Tabs ===== */
+const tabs=[...document.querySelectorAll('.tabbar .tab')];
+const panels=[...document.querySelectorAll('.tabpanel')];
+function activateTab(name){
+  tabs.forEach(t=>t.classList.toggle('on',t.dataset.t===name));
+  panels.forEach(p=>p.classList.toggle('on',p.id==='p-'+name));
+  if(name==='journey'){ [map1,map2].forEach(m=>setTimeout(()=>m.invalidateSize(),80)); }
+  history.replaceState(null,'',name==='journey'?location.pathname:'#'+name);
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  activateTab(t.dataset.t);
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+if(location.hash && /^#(journey|people|tree|movies)$/.test(location.hash)) activateTab(location.hash.slice(1));
 </script>
 </body>
 </html>
